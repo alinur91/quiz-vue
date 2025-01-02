@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: url('../data/images/space-2.jpg');
+  min-height: 110vh;
+  background-size: cover;
+  background-position: 50%;
+}
+
+@keyframes custom-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: custom-spin 3s linear infinite;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+progress {
+  width: 100%;
+  height: 12px;
+  grid-column: 1 / -1;
+}
+
+::-webkit-progress-bar {
+  background-color: transparent;
+  border-radius: 100px;
+}
+::-webkit-progress-value {
+  background-color: rgb(141, 71, 190);
+  border-radius: 100px;
+}
+
+/* For Chrome, Safari, and Opera */
+/* Change color and make scrollbar thinner */
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: purple; /* color of the scrollbar */
+  border-radius: 3px; /* roundness of the scrollbar thumb */
+}
