@@ -18,7 +18,6 @@
 import { useQuiz } from '@/composables/useQuiz'
 import { computed } from 'vue'
 const { pointsPerCorrectAnswer, points, quizInfo, index } = useQuiz()
-
 const totalQuestions = quizInfo.value!.questions.length || 0
 const progressBarValue = computed(() => index.value + 1)
 </script>

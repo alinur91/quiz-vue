@@ -6,7 +6,7 @@
       v-for="question in questionsArr"
       :key="question.imageSrc"
     >
-      <Image
+      <TechnologyImage
         :src="question.imageSrc"
         :size="ImageSizes.small"
         :is-react-logo="question.technologyName === Technologies.react"
@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { useQuiz } from '@/composables/useQuiz'
 import { questions, Technologies } from '@/data/questions'
-import Image from '@/shared/Image.vue'
+import TechnologyImage from '@/shared/TechnologyImage.vue'
 import { ImageSizes } from '@/types/quizType'
 import { computed } from 'vue'
 

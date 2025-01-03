@@ -16,10 +16,10 @@
       </h2>
       <h3 className="text-[1.30rem]">Select Your Favorite Topic!</h3>
     </div>
-    <TechnologyImages class="pt-6" />
+    <TechnologyImagesList class="pt-6" />
   </div>
 </template>
 <script setup lang="ts">
 import { ThumbsUp } from 'lucide-vue-next'
-import TechnologyImages from './TechnologyImages.vue'
+import TechnologyImagesList from '@/features/start-screen/TechnologyImagesList.vue'
 </script>

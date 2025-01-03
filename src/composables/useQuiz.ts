@@ -1,4 +1,4 @@
-import type { QuestionCategory } from '@/data/questions'
+import { type QuestionCategory } from '@/data/questions'
 import { ref } from 'vue'
 
 export enum QuizStatusEnum {
@@ -30,7 +30,34 @@ const giveTheAnswer = (givenAnswer: number, isAnswerCorrect: boolean) => {
   if (isAnswerCorrect) {
     points.value = points.value + pointsPerCorrectAnswer.value
   }
-  // points.value = isAnswerCorrect ? points.value + pointsPerCorrectAnswer.value : points.value
+}
+
+const existQuiz = () => {
+  quizStatus.value = QuizStatusEnum.ready
+  index.value = 0
+  answer.value = null
+  points.value = 0
+  quizInfo.value = null
+}
+
+const nextQuestion = () => {
+  answer.value = null
+  index.value++
+}
+
+const completeQuiz = () => {
+  quizStatus.value = QuizStatusEnum.finished
+  answer.value = null
+  index.value = 0
+}
+
+const restartQuiz = () => {
+  quizStatus.value = QuizStatusEnum.ready
+  quizInfo.value = null
+  index.value = 0
+  answer.value = null
+  points.value = 0
+  pointsPerCorrectAnswer.value = 10
 }
 
 export const useQuiz = () => {
@@ -44,5 +71,9 @@ export const useQuiz = () => {
     points,
     index,
     giveTheAnswer,
+    existQuiz,
+    nextQuestion,
+    completeQuiz,
+    restartQuiz,
   }
 }
